@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+  background-color: #fff;
+  text-align: center;
+}
+#background {
+  fill: #fdee79;
+}
+.gallows {
+  fill: #663300;
+}
+.man {
+  stroke: black; 
+  stroke-width: 8;
+  fill: none;
+}
+text {
+  fill: black;
+  font-size: 50px;
+  font-weight: bold;
+  text-anchor: middle;
+}

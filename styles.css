@@ -1,21 +1,28 @@
 body {
   font-family: sans-serif;
-  background-color: #fff;
+  background-color: #131417;
   text-align: center;
+  color: #fff;
 }
 #background {
-  fill: #fdee79;
+  fill: #252830;
+}
+svg {
+  box-shadow: grey 10px 10px 30px;
+  border: 4px solid #9b9dad;
 }
 .gallows {
-  fill: #663300;
+  fill: #131417;
+  stroke: #131417;
+  stroke-width: 8;
 }
 .man {
-  stroke: black; 
+  stroke: #21d8d6; 
   stroke-width: 8;
   fill: none;
 }
 text {
-  fill: black;
+  fill: #fff;
   font-size: 50px;
   font-weight: bold;
   text-anchor: middle;

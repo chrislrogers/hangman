@@ -10,24 +10,55 @@
 
 <body>
   <h1>Hangman</h1>
+  <button onclick="start()">Start</button>
+  <button onclick="end()">Stop</button>
+  <p>Use your keyboard to made a guess.</p>
   <div class="game-container">
-    <button onclick="start()">Start</button>
+    <svg width="600" height="600">
+      <rect width="100%" height="100%" id="background"/>
+      <rect  class="gallows" x="300" y="580" width="300" height="20"/>
+      <rect  class="gallows" x="400" y="200" width="150" height="20"/>
+      <line  class="gallows" x1="400" y1="200" x2="400" y2="260"//>
+      <rect  class="gallows" x="550" y="200" width="20" height="400"/>
+      <line class="gallows" x1="400" y1="200" x2="550" y2="300"/>
+      <circle class="man" id="head" cx="400" cy="300" r="40"  />
+      <line class="man" id="body" x1="400" y1="340" x2="400" y2="400"/>
+      <line class="man" id="arm1" x1="400" y1="350" x2="420" y2="400"/>
+      <line class="man" id="arm2" x1="400" y1="350" x2="380" y2="400"/>
+      <line class="man" id="leg1" x1="400" y1="400" x2="380" y2="460"/>
+      <line class="man" id="leg2" x1="400" y1="400" x2="420" y2="460"/>
+      <text x="300" y="50"><tspan id="target"></tspan></text>
+      <text x="300" y="130"><tspan id="result"></tspan></text>
+      <text class="info" x="400" y="180">Guesses: <tspan id="guesses"></tspan></text>
+      <text class="letter" id="a" x="50" y="200">a</text>
+      <text class="letter" id="b" x="100" y="200">b</text>
+      <text class="letter" id="c" x="150" y="200">c</text>
+      <text class="letter" id="d" x="200" y="200">d</text>
+      <text class="letter" id="e" x="250" y="200">e</text>
+      <text class="letter" id="f" x="50" y="250">f</text>
+      <text class="letter" id="g" x="100" y="250">g</text>
+      <text class="letter" id="h" x="150" y="250">h</text>
+      <text class="letter" id="i" x="200" y="250">i</text>
+      <text class="letter" id="j" x="250" y="250">j</text>
+      <text class="letter" id="k" x="50" y="300">k</text>
+      <text class="letter" id="l" x="100" y="300">l</text>
+      <text class="letter" id="m" x="150" y="300">m</text>
+      <text class="letter" id="n" x="200" y="300">n</text>
+      <text class="letter" id="o" x="250" y="300">o</text>
+      <text class="letter" id="p" x="50" y="350">p</text>
+      <text class="letter" id="q" x="100" y="350">q</text>
+      <text class="letter" id="r" x="150" y="350">r</text>
+      <text class="letter" id="s" x="200" y="350">s</text>
+      <text class="letter" id="t" x="250" y="350">t</text>
+      <text class="letter" id="u" x="50" y="400">u</text>
+      <text class="letter" id="v" x="100" y="400">v</text>
+      <text class="letter" id="w" x="150" y="400">w</text>
+      <text class="letter" id="x" x="200" y="400">x</text>
+      <text class="letter" id="y" x="250" y="400">y</text>
+      <text class="letter" id="z" x="150" y="450">z</text>
+    </svg>
   </div>
-  <svg width="600" height="600">
-    <rect width="100%" height="100%" id="background"/>
-    <rect  class="gallows" x="300" y="580" width="300" height="20"/>
-    <rect  class="gallows" x="400" y="200" width="150" height="20"/>
-    <rect  class="gallows" x="395" y="200" width="10" height="60"/>
-    <rect  class="gallows" x="550" y="200" width="20" height="400"/>
-    <line class="gallows" x1="395" y1="200" x2="550" y2="300"/>
-    <circle class="man" id="head" cx="400" cy="300" r="40"  />
-    <line class="man" id="body" x1="400" y1="340" x2="400" y2="400"/>
-    <line class="man" id="arm1" x1="400" y1="350" x2="420" y2="400"/>
-    <line class="man" id="arm2" x1="400" y1="350" x2="380" y2="400"/>
-    <line class="man" id="leg1" x1="400" y1="400" x2="380" y2="460"/>
-    <line class="man" id="leg2" x1="400" y1="400" x2="420" y2="460"/>
-    <text x="300" y="50"><tspan id="target"></tspan>Place Holder</text>
-  </svg>
+  <p>Note: Make sure "Caps Lock" is off.</p>
   <script src="script.js"></script>
 </body>
 </html>

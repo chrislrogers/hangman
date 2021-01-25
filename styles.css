@@ -7,6 +7,9 @@ body {
 #background {
   fill: #252830;
 }
+#game-container {
+  outline-style: none;
+}
 svg {
   box-shadow: grey 10px 10px 30px;
   border: 4px solid #9b9dad;

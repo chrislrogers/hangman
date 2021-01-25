@@ -211,8 +211,15 @@ function end() {
     }
 }
 
-document.onkeydown = function(event) {
+document.getElementById("game-container").onkeydown = function(event) {
     if (isPlaying) {
         update(event.key);
     }
 }
+
+document.getElementById("input-word").addEventListener("input", function(event) {
+    if (isPlaying) {
+        update(event.target.value.toLowerCase());
+        document.getElementById("input-word").value = '';
+    }
+});

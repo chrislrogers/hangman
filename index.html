@@ -10,10 +10,10 @@
 
 <body>
   <h1>Hangman</h1>
-  <button onclick="start()">Start</button>
-  <button onclick="end()">Stop</button>
-  <p>Use your keyboard to made a guess.</p>
-  <div class="game-container">
+  <div id="game-container" tabindex="-1">
+    <button onclick="start()">Start</button>
+    <button onclick="end()">Stop</button>
+    <p>Use your keyboard to made a guess (Caps off).</p>
     <svg width="600" height="600">
       <rect width="100%" height="100%" id="background"/>
       <rect  class="gallows" x="300" y="580" width="300" height="20"/>
@@ -58,7 +58,8 @@
       <text class="letter" id="z" x="150" y="450">z</text>
     </svg>
   </div>
-  <p>Note: Make sure "Caps Lock" is off.</p>
+  <input type="text" id="input-word" placeholder="Type something..." maxlength="1">
+  <p>Or enter something into this text box.</p>
   <script src="script.js"></script>
 </body>
 </html>

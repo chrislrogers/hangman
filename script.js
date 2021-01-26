@@ -54,7 +54,27 @@ const words = [
   'italy',
   'pizza',
   'koala',
-  'remedy'
+  'remedy',
+  'europe',
+  'australia',
+  'scotland',
+  'rocket',
+  'moose',
+  'compound',
+  'locomotive',
+  'california',
+  'orbit',
+  'texas',
+  'mississippi',
+  'tennessee',
+  'mountain',
+  'submarine',
+  'crown',
+  'jewel',
+  'delivery',
+  'chicken',
+  'arcade',
+  'painting'
 ];
 
 const alphabet = [

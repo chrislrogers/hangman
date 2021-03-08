@@ -1,94 +1,94 @@
 const words = [
-  'employee',
-  'guitar',
-  'canada',
-  'control',
-  'tree',
-  'england',
-  'banana',
-  'artist',
-  'orange',
-  'water',
-  'microwave',
-  'version',
-  'steam',
-  'adventure',
-  'robin',
-  'bowl',
-  'spoon',
-  'dictionary',
-  'mouse',
-  'island',
-  'stone',
-  'wonder',
-  'soup',
-  'armadillo',
-  'strawberry',
-  'desert',
-  'rain',
-  'taxi',
-  'state',
-  'library',
-  'laptop',
-  'agreement',
-  'concept',
-  'feather',
-  'relaxation',
-  'pause',
-  'descent',
-  'athlete',
-  'explosion',
-  'decorative',
-  'celebration',
-  'neighbour',  
-  'sneeze',
-  'beach',
-  'forest',
-  'rabbit',
-  'dog',
-  'pie',
-  'curtains',
-  'rhinoceros',
-  'bear',
-  'chair',
-  'octopus',
-  'rose',
-  'carpet',
-  'table',
-  'sparrow',
-  'radio',
-  'cheese',
-  'tissues',
-  'week',
-  'television',
-  'italy',
-  'pizza',
-  'koala',
-  'remedy',
-  'europe',
-  'australia',
-  'scotland',
-  'rocket',
-  'moose',
-  'compound',
-  'locomotive',
-  'california',
-  'orbit',
-  'texas',
-  'mississippi',
-  'tennessee',
-  'mountain',
-  'submarine',
-  'crown',
-  'jewel',
-  'delivery',
-  'chicken',
-  'arcade',
-  'painting'
+    'employee',
+    'guitar',
+    'canada',
+    'control',
+    'tree',
+    'england',
+    'banana',
+    'artist',
+    'orange',
+    'water',
+    'microwave',
+    'version',
+    'steam',
+    'adventure',
+    'robin',
+    'bowl',
+    'spoon',
+    'dictionary',
+    'mouse',
+    'island',
+    'stone',
+    'wonder',
+    'soup',
+    'armadillo',
+    'strawberry',
+    'desert',
+    'rain',
+    'taxi',
+    'state',
+    'library',
+    'laptop',
+    'agreement',
+    'concept',
+    'feather',
+    'relaxation',
+    'pause',
+    'descent',
+    'athlete',
+    'explosion',
+    'decorative',
+    'celebration',
+    'neighbour',
+    'sneeze',
+    'beach',
+    'forest',
+    'rabbit',
+    'dog',
+    'pie',
+    'curtains',
+    'rhinoceros',
+    'bear',
+    'chair',
+    'octopus',
+    'rose',
+    'carpet',
+    'table',
+    'sparrow',
+    'radio',
+    'cheese',
+    'tissues',
+    'week',
+    'television',
+    'italy',
+    'pizza',
+    'koala',
+    'remedy',
+    'europe',
+    'australia',
+    'scotland',
+    'rocket',
+    'moose',
+    'compound',
+    'locomotive',
+    'california',
+    'orbit',
+    'texas',
+    'mississippi',
+    'tennessee',
+    'mountain',
+    'submarine',
+    'crown',
+    'jewel',
+    'delivery',
+    'chicken',
+    'arcade',
+    'painting'
 ];
 
 const alphabet = [
-  'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
 ];
 
 let alphabetCopy = [...alphabet];
@@ -130,7 +130,7 @@ function isLetter(input) {
 }
 
 function start() {
-    if (!isPlaying){
+    if (!isPlaying) {
         lives = 6;
         score = 0;
         winner = false;
@@ -139,7 +139,7 @@ function start() {
         result.innerHTML = '';
         guesses.innerHTML = lives;
         for (let i = 0; i < word.length; i++) {
-            target.insertAdjacentHTML('beforeend', "<tspan id=\""+i+"\">_</tspan>");
+            target.insertAdjacentHTML('beforeend', "<tspan id=\"" + i + "\">_</tspan>");
         }
         console.log(word);
         isPlaying = true;
@@ -152,7 +152,7 @@ function start() {
         alphabetCopy = [...alphabet];
         let letter;
         for (let i = 0; i < alphabet.length; i++) {
-            letter = document.getElementById(alphabet[i]).style.fill="white";
+            letter = document.getElementById(alphabet[i]).style.fill = "white";
         }
     } else {
         console.log("game has already started");
@@ -168,12 +168,12 @@ function update(input) {
             current = document.getElementById(i);
             current.innerHTML = word[i];
             isMatch = true;
-            letter = document.getElementById(word[i]).style.fill="green";
+            letter = document.getElementById(word[i]).style.fill = "green";
         }
     }
     if (!isMatch && isLetter(input)) {
         isMatch = false;
-        letter = document.getElementById(input).style.fill="red";
+        letter = document.getElementById(input).style.fill = "red";
     }
     if (isMatch === false) {
         lives--;
@@ -198,7 +198,7 @@ function update(input) {
         leg2.style.stroke = "#21d8d6";
         end();
     }
-    if (!isRemaining()){
+    if (!isRemaining()) {
         winner = true;
         end();
     }
@@ -224,7 +224,7 @@ function end() {
         for (let i = 0; i < word.length; i++) {
             if (document.getElementById(i).innerHTML === "_") {
                 current = document.getElementById(i);
-                current.innerHTML = "<tspan class=\"missed\">"+word[i]+"</tspan>";
+                current.innerHTML = "<tspan class=\"missed\">" + word[i] + "</tspan>";
             }
         }
         if (winner) {
@@ -241,13 +241,13 @@ function end() {
     }
 }
 
-document.getElementById("game-container").onkeydown = function(event) {
+document.getElementById("game-container").onkeydown = function (event) {
     if (isPlaying) {
         update(event.key);
     }
 }
 
-document.getElementById("input-word").addEventListener("input", function(event) {
+document.getElementById("input-word").addEventListener("input", function (event) {
     if (isPlaying) {
         update(event.target.value.toLowerCase());
         document.getElementById("input-word").value = '';
